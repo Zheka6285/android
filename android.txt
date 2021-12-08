@@ -1,0 +1,87 @@
+open class Human{
+    var name: String 
+    var gender: String 
+    var age: Int 
+    
+    constructor(name: String, gender: String, age:Int){
+        this.name = name
+        this.gender = gender
+        this.age = age
+    }
+    
+    open fun printInfo(){
+        println("Name: " + name + "; Gender: " + gender + "; Age: " + age + " y.o.")
+    }
+}
+
+
+class Student: Human{
+    
+    var numGroup: Int
+    constructor(name: String, gender: String, age: Int, numGroup: Int): super(name, gender, age){
+        this.numGroup= numGroup
+    }
+    
+    override fun printInfo(){
+        println("Name: "+ name +"; Gender: "+ gender +"; Age: "+ age +" y.o.; Group number: "+ numGroup)
+    }
+}
+
+
+fun main() {
+    val kirushka = Human("Kirill", "male", 19) 
+    val zheka = Student("Eugene", "male", 19, 309)
+    
+    
+    kirushka.printInfo()
+    zheka.printInfo()
+}
+fun main() {
+    Number(1, 22, 45984, 878545, 87898, 7898, 98765432, 1111111111, 10023)
+}
+
+fun Number(vararg arr: Int){
+    var array = emptyList<String>()
+    var array1 = emptyList<String>()
+    var array2 = emptyList<Int>()
+    var array3 = arrayOf(0,0,0,0,0,0,0,0,0,0)
+   	for(s in arr){
+        val s1 = s.toString()
+        array += s1
+    }
+    for(a in array){
+        val s2 = a.toCharArray()
+        for(s in s2){
+            array1+=s.toString()
+        }
+    }
+    for(arr in array1){
+        array2 += arr.toInt()
+    }
+   	for(i in array2){
+        if(i==0){
+            array3[0]++
+        } else if(i==1){
+            array3[1]++
+        } else if(i==2){
+            array3[2]++
+        } else if(i==3){
+            array3[3]++
+        } else if(i==4){
+            array3[4]++
+        } else if(i==5){
+            array3[5]++
+        } else if(i==6){
+            array3[6]++
+        } else if(i==7){
+            array3[7]++
+        } else if(i==8){
+            array3[8]++
+        } else if(i==9){
+            array3[9]++
+        } 
+    }
+     
+    println("Серед введених чисел частіше всього зустрічається цифра" + array3.indexOf(array3.maxOrNull()) )
+    
+}
